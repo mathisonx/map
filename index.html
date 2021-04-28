@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园地图</title>
+    <link rel="icon" type="image/x-icon" href="/pic/favicon.ico" />
+    <link rel="stylesheet" href="index.css">
+    <script src="http://mockjs.com/dist/mock.js"></script>      
+    <script src="Mock.js"></script>
+
+    <!-- 地图插件 -->
+    <script type="text/javascript" src="//api.map.baidu.com/getscript?type=webgl&v=1.0&ak=27e9yBccRGGXvh7HIxl2qnwaIdjEzwar"></script>
+</head>
+<body>
+    <!-- 顶部 -->
+    <div class="top_bar">
+        <!-- 左侧 -->
+        <div class="top_left">
+            <a href="JavaScript:void(0)" onclick = "openMenu()" ><img src="/pic/menu.png" alt="" class="top_menu_img"></a>
+            <div class="top_search">
+                <img src="/pic/search.png" alt="" class="top_search_img">
+                <input type="text" placeholder="位置搜索" id="search_input" class="search_input" onkeypress="search_place()" >
+            </div>
+            <img src="/pic/zoom.png" alt="" id="zoom_pic" onclick="change_zoom()" style="cursor: pointer;">
+        </div>
+        <!-- 中央 -->
+        <div class="top_logo">
+            <img src="pic/logo.png" alt="" class="top_logo_img">
+        </div>
+        <!-- 右侧 -->
+        <div class="top_right">
+            <div id="user">11</div>
+        </div>
+    </div>
+
+    <!--地图区域-->
+    <div id="container" ></div>
+
+    <!-- 侧边设备栏 -->
+    <div id="menu_open">
+        <!-- 搜索框 -->
+        <div id="search_equipment">
+            <img src="/pic/search.png" alt="" class="menu_search_img" >
+            <input type="text" id="search_equipment_input" placeholder="设备搜索">
+        </div>
+        <!-- 所有设备按钮 -->
+        <div id="menu_in1" onclick="openMenu_in1()">
+            <img src="/pic/menu-close.png" alt="" id="menu_in1_img">
+            <span>所有设备</span>
+        </div>
+        <!-- 设备目录 -->
+        <div id="all_equipment" > 
+            <ul id="all_equipment_information" >
+            </ul>
+        </div>
+    </div> 
+
+    <!-- 底部信息区块 -->
+    <div id="information">
+        <div id="information_in">
+
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+
+    
+</body>
+</html>

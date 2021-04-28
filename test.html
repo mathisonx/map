@@ -1,0 +1,30 @@
+<body>
+    <div id="allmap"></div>
+    <input type="button" onclick="deletePoint()" value="删除经度为104.044444的点"/>
+    <script type="text/javascript" src="//api.map.baidu.com/getscript?type=webgl&v=1.0&ak=27e9yBccRGGXvh7HIxl2qnwaIdjEzwar"></script>
+
+    </body>
+    </html>
+    <script type="text/javascript">
+        var map = new BMap.Map("allmap");
+        var point = new BMap.Point(104.07287, 30.663207);
+        map.centerAndZoom(point, 11);
+        var points = new Array();
+        points[0] = [104.100000, 30.790000];
+        points[1] = [104.044444, 30.600000];
+        points[2] = [104.055555, 30.822222];
+        for(var j = 0;j<=points.length;j++) {
+            var marker = new BMap.Marker(new BMap.Point(points[j][0], points[j][1]));
+            map.addOverlay(marker);
+        }
+        function deletePoint(){
+            var allOverlay = map.getOverlays();
+            for(var i = 0;i<allOverlay.length;i++) {
+                //删除指定经度的点
+                if (allOverlay[i].getPosition().lng == 104.044444) {
+                    map.removeOverlay(allOverlay[i]);
+                    return false;
+                }
+            }
+        }
+    </script>
